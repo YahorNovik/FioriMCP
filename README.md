@@ -204,8 +204,9 @@ node -e "const enc='utf8'; const msgs=[{jsonrpc:'2.0',id:1,method:'initialize',p
 
 ## Notes
 
-- Internal UI5 buttons (e.g., `__button6-internalBtn`) are filtered out from `get_table_actions`/`get_object_actions`.
-- `execute_action`/`execute_object_action` return structured payloads with a `scenario` and optional `formFields`, `messages`, and dialog buttons when present.
+- Internal UI5 buttons (e.g., `__button*-internalBtn`) are filtered out from `get_table_actions`/`get_object_actions`.
+- `execute_action`/`execute_object_action` return structured payloads with a `scenario` (`form_opened`, `popup_dialog`, `error_messages`, `action_completed`) and may include `formFields`, `messages`, and dialog button metadata when present.
+- `get_messages` includes dialog buttons when a dialog is open.
 - Server auto-recovers if the page is not initialized by starting the app on demand.
 
 ## Python utilities (optional)
