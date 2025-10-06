@@ -1,0 +1,12 @@
+## Requirements for optional Python utilities and checks
+# Python is optional in this repo. Core server is Node.js.
+
+# Runtime
+requests==2.32.3
+python-dotenv==1.0.1
+
+# Logging (optional)
+loguru==0.7.2
+
+# Testing (optional)
+pytest==8.3.2

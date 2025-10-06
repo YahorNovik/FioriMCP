@@ -1,0 +1,107 @@
+start_app: Launches the Fiori app, waits for UI5 to initialize, and stabilizes (headless-aware).
+Inputs: none
+Returns: confirmation text
+
+press_go: Presses the Go/Search button, waits for table refresh, and returns current rows.
+Inputs: none
+Returns: status + rows JSON
+
+get_table_rows: Reads visible table rows with column keys and row count.
+Inputs: none
+Returns: rows JSON
+
+select_row: Selects a row by index (0-based).
+Inputs: rowIndex (number)
+Returns: confirmation text
+
+open_object_page: Opens the object page for a row by index.
+Inputs: rowIndex (number)
+Returns: confirmation text
+
+get_object_actions: Lists object page header actions with ids/selectors.
+Inputs: none
+Returns: actions JSON
+
+get_object_fields: Reads label/value pairs from the object page (display mode), de-duplicated.
+Inputs: none
+Returns: fields JSON
+
+execute_object_action: Clicks an object page action by name/id.
+Inputs: action (string)
+Returns: confirmation text
+
+get_form_fields: Lists editable form fields (id, label, selector, value).
+Inputs: none
+Returns: formFields JSON
+
+fill_form_field: Types a value into a named/labelled form field and fires UI5 events.
+Inputs: fieldName (string), value (string)
+Returns: confirmation text
+
+get_filter_fields: Lists filter bar fields (id, label, selector).
+Inputs: none
+Returns: filterFields JSON
+
+set_filter: Sets a filter by property key/label and triggers change events.
+Inputs: propertyKey (string), value (string)
+Returns: confirmation text
+
+get_table_actions: Lists toolbar actions with enabled state and likely selection requirement.
+Inputs: none
+Returns: actions JSON
+
+execute_table_action: Executes a toolbar action (e.g., Create/Update/Delete); detects outcomes.
+Inputs: action (string)
+Returns: dialog/form fields JSON, error messages JSON, or completion status
+
+execute_dialog_action: Clicks a dialog button by text/aria-label (e.g., Update/Ok/Cancel), capturing messages.
+Inputs: action (string)
+Returns: messages JSON or confirmation text
+
+discard_draft: Clicks Cancel/Discard Draft where applicable and closes draft.
+Inputs: none
+Returns: confirmation text
+
+submit_form: Clicks Save/Create on forms and collects validation/messages.
+Inputs: none
+Returns: success text or messages JSON
+
+get_clickable_elements: Discovers visible clickable elements with selectors and enabled state.
+Inputs: none
+Returns: elements JSON
+
+highlight_element: Temporarily highlights an element by CSS selector.
+Inputs: selector (string), durationMs? (number)
+Returns: confirmation or not found
+
+click_by_selector: Clicks an element by CSS selector (uses UI5 firePress if available).
+Inputs: selector (string)
+Returns: confirmation or error text
+
+type_by_selector: Types into an input/textarea by CSS selector; dispatches input/change.
+Inputs: selector (string), value (string)
+Returns: confirmation or error text
+
+wait_for_selector: Waits for an element to appear by selector.
+Inputs: selector (string), timeoutMs? (number)
+Returns: appeared/timeout text
+
+wait_for_missing_selector: Waits for an element to disappear by selector.
+Inputs: selector (string), timeoutMs? (number)
+Returns: disappeared/timeout text
+
+get_messages: Collects UI5 messages (popover, dialog, strips, toasts).
+Inputs: none
+Returns: messages JSON
+
+record_flow_start: Starts recording subsequent interactions.
+Inputs: none
+Returns: confirmation text
+
+record_flow_stop: Stops recording and returns recorded steps.
+Inputs: none
+Returns: steps JSON
+
+close_app: Closes the browser/page context.
+Inputs: none
+Returns: confirmation text

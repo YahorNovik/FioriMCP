@@ -1,0 +1,14 @@
+node_modules/
+
+# Build artifacts
+/dist/
+/playwright/.cache/
+/playwright-report/
+/test-results/
+
+# Env & logs
+.env
+*.log
+
+# OS
+.DS_Store

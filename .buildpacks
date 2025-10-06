@@ -1,0 +1,5 @@
+# Cloud Foundry Buildpack Configuration
+
+# .buildpacks file for multi-buildpack setup
+https://github.com/cloudfoundry/nodejs-buildpack
+https://github.com/cloudfoundry/binary-buildpack
